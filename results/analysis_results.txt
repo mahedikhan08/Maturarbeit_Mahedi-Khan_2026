@@ -1,0 +1,20 @@
+======================================================================
+WILCOXON-VORZEICHEN-RANG-TESTS (gepaart pro CATH-Familie)
+======================================================================
+dG_0       vs dG_0.001   | n= 22 paare | W=   117.0 | p=0.7745 | nicht signifikant | Median-Differenz (dG_0.001-dG_0) = -0.093 kcal/mol
+dG_0       vs dG_0.01    | n= 21 paare | W=    19.0 | p=0.0002928 | signifikant (p < 0.05) | Median-Differenz (dG_0.01-dG_0) = +0.576 kcal/mol
+dG_0.001   vs dG_0.01    | n= 20 paare | W=    23.0 | p=0.001209 | signifikant (p < 0.05) | Median-Differenz (dG_0.01-dG_0.001) = +0.634 kcal/mol
+dG_0.01    vs dG_0.1     | n= 13 paare | W=     0.0 | p=0.0002441 | signifikant (p < 0.05) | Median-Differenz (dG_0.1-dG_0.01) = +1.741 kcal/mol
+
+======================================================================
+KOMPROMISS-SCORE PRO GEWICHTSGRUPPE
+======================================================================
+          total_designs  successful_designs  success_rate_pct  mean_abs_dG  z_mean_abs_dG  z_success_rate  compromise_score
+dG_0           8200.000                 363             4.427        2.743         -0.698           0.660            -0.038
+dG_0.001       8200.000                 354             4.317        2.665         -0.755           0.558            -0.198
+dG_0.01        8200.000                 350             4.268        3.366         -0.244           0.512             0.268
+dG_0.1         8200.000                 153             1.866        6.029          1.698          -1.730            -0.032
+
+-> Hoechster Kompromiss-Score: dG_0.01
+
+Rohdaten zusaetzlich gespeichert unter: compromise_score_summary.csv
