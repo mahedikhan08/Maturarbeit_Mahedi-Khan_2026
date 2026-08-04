@@ -1,0 +1,13 @@
+case: "dG_0"
+template_dir: "/scicore/home/schwede/<username>/project/tea-leaves-workdir/cath_seq/cath_pdb_templates"
+parent_dir: "/scicore/home/schwede/<username>/project/tea-leaves-workdir/cath_seq/cath_outputs_abs_scale"
+output_dir: "/scicore/home/schwede/<username>/project/tea-leaves-workdir/cath_seq/sieve_output/scale"
+stoichiometry: 1
+
+af2_model: "alphafold2_ptm"
+path_to_mmseqs: "/scicore/home/schwede/pudziu0000/mambaforge/envs/colabfold/bin/mmseqs"
+path_to_colabfold_dbs: "/scicore/home/schwede/durair0000/projects/alphabeta/colabfold_dbs/"
+
+ipsae_params:
+  pae_threshold: 15
+  distance_threshold: 15

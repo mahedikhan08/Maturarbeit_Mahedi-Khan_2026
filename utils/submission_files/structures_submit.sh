@@ -17,6 +17,6 @@ export TRANSFORMERS_OFFLINE=1
 mkdir -p logs
 
 # Befehl auswaehlen und ausfuehren
-cd /scicore/home/schwede/khan0010/project/tea-leaves/sieve
+cd /scicore/home/schwede/<username>/project/tea-leaves/sieve
 
-snakemake --use-conda --profile slurm -s Snakefile structure_scores --cores 64 --configfile /scicore/home/schwede/khan0010/project/tea-leaves-workdir/cath_seq/config.yaml
+snakemake --use-conda --profile slurm -s Snakefile structure_scores --cores 64 --configfile /scicore/home/schwede/<username>/project/tea-leaves-workdir/cath_seq/config.yaml

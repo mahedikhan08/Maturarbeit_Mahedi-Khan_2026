@@ -8,9 +8,9 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 # --- CONFIGURATION ---
-WILDTYPE_DIR = "/scicore/home/schwede/khan0010/project/tea-leaves-workdir/cath_seq/wildtype_esm3dg_predictions"
-DESIGN_DIR = "/scicore/home/schwede/khan0010/project/tea-leaves-workdir/cath_seq/sieve_output/esm3dg_predictions_scale"
-OUTPUT_DIR = "/scicore/home/schwede/khan0010/project/tea-leaves-workdir/cath_seq/stability_comparison/scale"
+WILDTYPE_DIR = "/scicore/home/schwede/<username>/project/tea-leaves-workdir/cath_seq/wildtype_esm3dg_predictions"
+DESIGN_DIR = "/scicore/home/schwede/<username>/project/tea-leaves-workdir/cath_seq/sieve_output/esm3dg_predictions_scale"
+OUTPUT_DIR = "/scicore/home/schwede/<username>/project/tea-leaves-workdir/cath_seq/stability_comparison/scale"
 # ------------------------------------------------
 
 

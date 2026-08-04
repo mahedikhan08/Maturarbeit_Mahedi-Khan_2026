@@ -10,9 +10,9 @@ import numpy as np
 import pandas as pd
 
 # --- CONFIGURATION ---
-CATH_OUTPUTS_DIR = "/scicore/home/schwede/khan0010/project/tea-leaves-workdir/cath_seq/cath_outputs_abs_scale"
-SIEVE_OUTPUT_DIR = "/scicore/home/schwede/khan0010/project/tea-leaves-workdir/cath_seq/sieve_output/scale"
-OUTPUT_DIR = "/scicore/home/schwede/khan0010/project/tea-leaves-workdir/cath_seq/stability_comparison/scale/filtered"
+CATH_OUTPUTS_DIR = "/scicore/home/schwede/<username>/project/tea-leaves-workdir/cath_seq/cath_outputs_abs_scale"
+SIEVE_OUTPUT_DIR = "/scicore/home/schwede/<username>/project/tea-leaves-workdir/cath_seq/sieve_output/scale"
+OUTPUT_DIR = "/scicore/home/schwede/<username>/project/tea-leaves-workdir/cath_seq/stability_comparison/scale/filtered"
 BIN_EDGES = list(range(0, 101, 10))  # 0-10, 10-20, ..., 90-100
 ALLOWED_GROUPS = {"dG_0","dG_0.001","dG_0.01","dG_0.1"}
 # ------------------------------------------------

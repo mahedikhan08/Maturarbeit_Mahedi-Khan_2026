@@ -6,8 +6,8 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 #CONFIGURATION
-CSV_PATH = "/scicore/home/schwede/khan0010/project/tea-leaves-workdir/cath_seq/stability_comparison/scale/filtered/all_dG_results_filtered.csv"
-OUTPUT_DIR = "/scicore/home/schwede/khan0010/project/tea-leaves-workdir/cath_seq/stability_comparison/scale/filtered/comparison_plots"
+CSV_PATH = "/scicore/home/schwede/<username>/project/tea-leaves-workdir/cath_seq/stability_comparison/scale/filtered/all_dG_results_filtered.csv"
+OUTPUT_DIR = "/scicore/home/schwede/<username>/project/tea-leaves-workdir/cath_seq/stability_comparison/scale/filtered/comparison_plots"
 GROUP_LEFT = "dG_0.01" 
 GROUP_RIGHT = "dG_0.1"   
 #

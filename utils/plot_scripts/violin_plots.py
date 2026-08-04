@@ -8,8 +8,8 @@ import numpy as np
 
 # --- CONFIGURATION ---
 # CSV, die von compare_stability.py erzeugt wurde
-CSV_PATH = "/scicore/home/schwede/khan0010/project/tea-leaves-workdir/cath_seq/stability_comparison/lab/all_dG_results_filtered.csv"
-OUTPUT_DIR = "/scicore/home/schwede/khan0010/project/tea-leaves-workdir/cath_seq/stability_comparison/lab/violin_plots"
+CSV_PATH = "/scicore/home/schwede/<username>/project/tea-leaves-workdir/cath_seq/stability_comparison/lab/all_dG_results_filtered.csv"
+OUTPUT_DIR = "/scicore/home/schwede/<username>/project/tea-leaves-workdir/cath_seq/stability_comparison/lab/violin_plots"
 # ------------------------------------------------
 
 

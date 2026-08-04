@@ -9,12 +9,12 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # --- CONFIGURATION ---
-BASE_DIR = "/scicore/home/schwede/khan0010/project/tea-leaves-workdir/cath_seq/sieve_output/scale"
-FASTA_BASE_DIR = "/scicore/home/schwede/khan0010/project/tea-leaves-workdir/cath_seq/cath_outputs_abs_scale"
-OUTPUT_DIR = "/scicore/home/schwede/khan0010/project/tea-leaves-workdir/cath_seq/stability_comparison/scale/filtered"
-FASTA_OUTPUT_DIR = "/scicore/home/schwede/khan0010/project/tea-leaves-workdir/cath_seq/stability_comparison/lists"
+BASE_DIR = "/scicore/home/schwede/<username>/project/tea-leaves-workdir/cath_seq/sieve_output/scale"
+FASTA_BASE_DIR = "/scicore/home/schwede/<username>/project/tea-leaves-workdir/cath_seq/cath_outputs_abs_scale"
+OUTPUT_DIR = "/scicore/home/schwede/<username>/project/tea-leaves-workdir/cath_seq/stability_comparison/scale/filtered"
+FASTA_OUTPUT_DIR = "/scicore/home/schwede/<username>/project/tea-leaves-workdir/cath_seq/stability_comparison/lists"
 
-DG_CSV_PATH = "/scicore/home/schwede/khan0010/project/tea-leaves-workdir/cath_seq/stability_comparison/scale/all_dG_results.csv"
+DG_CSV_PATH = "/scicore/home/schwede/<username>/project/tea-leaves-workdir/cath_seq/stability_comparison/scale/all_dG_results.csv"
 GROUPS = ["dG_0","dG_0.001","dG_0.01","dG_0.1"]
 TM_THRESHOLD = 0.7 
 JITTER_WIDTH = 0.15

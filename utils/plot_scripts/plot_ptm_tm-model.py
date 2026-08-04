@@ -9,9 +9,9 @@ import pandas as pd
 import seaborn as sns
 
 # --- CONFIGURATION ---
-BASE_DIR = "/scicore/home/schwede/khan0010/project/tea-leaves-workdir/cath_seq/sieve_output/scale"
-DG_CSV_PATH = "/scicore/home/schwede/khan0010/project/tea-leaves-workdir/cath_seq/stability_comparison/scale/all_dG_results.csv"
-OUTPUT_DIR = "/scicore/home/schwede/khan0010/project/tea-leaves-workdir/cath_seq/stability_comparison/scale"
+BASE_DIR = "/scicore/home/schwede/<username>/project/tea-leaves-workdir/cath_seq/sieve_output/scale"
+DG_CSV_PATH = "/scicore/home/schwede/<username>/project/tea-leaves-workdir/cath_seq/stability_comparison/scale/all_dG_results.csv"
+OUTPUT_DIR = "/scicore/home/schwede/<username>/project/tea-leaves-workdir/cath_seq/stability_comparison/scale"
 GROUPS = ["dG_0"]
 # ------------------------------------------------
 

@@ -7,8 +7,8 @@ import pandas as pd
 
 # --- CONFIGURATION ---
 # CSV, die von compare_stability.py erzeugt wurde
-CSV_PATH = "/scicore/home/schwede/khan0010/project/tea-leaves-workdir/cath_seq/stability_comparison/lab/all_dG_results_filtered.csv"
-OUTPUT_DIR = "/scicore/home/schwede/khan0010/project/tea-leaves-workdir/cath_seq/stability_comparison/lab/per_protein_plots_scale_filter"
+CSV_PATH = "/scicore/home/schwede/<username>/project/tea-leaves-workdir/cath_seq/stability_comparison/lab/all_dG_results_filtered.csv"
+OUTPUT_DIR = "/scicore/home/schwede/<username>/project/tea-leaves-workdir/cath_seq/stability_comparison/lab/per_protein_plots_scale_filter"
 # ------------------------------------------------
 
 

@@ -2,7 +2,7 @@ import os
 
 # --- CONFIGURATION  ---
 FASTA_FILE = "cath_sequences_selected.fasta"  # Name deiner FASTA-Datei
-WORKDIR = "/scicore/home/schwede/khan0010/project/tea-leaves-workdir/cath_seq"
+WORKDIR = "/scicore/home/schwede/<username>/project/tea-leaves-workdir/cath_seq"
 STABILITY_WEIGHT = 0
 LEN_MULTIPLIER = 200
 DECAY_SCHEDULE = 2
