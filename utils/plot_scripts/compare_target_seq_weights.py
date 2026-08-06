@@ -7,8 +7,8 @@ import pandas as pd
 
 # --- CONFIGURATION ---
 # CSV, die von compare_stability.py erzeugt wurde
-CSV_PATH = "/scicore/home/schwede/<username>/project/tea-leaves-workdir/cath_seq/stability_comparison/lab/all_dG_results_filtered.csv"
-OUTPUT_DIR = "/scicore/home/schwede/<username>/project/tea-leaves-workdir/cath_seq/stability_comparison/lab/per_protein_plots_scale_filter"
+CSV_PATH = "path to dG_results.csv"
+OUTPUT_DIR = "path to output"
 # ------------------------------------------------
 
 
@@ -48,7 +48,7 @@ def main():
     for cath_id in cath_ids:
         sub = df[df["cath_id"] == cath_id].copy()
 
-        # SKIP-LOGIK: Wenn für dieses Protein KEIN Design vorhanden ist (sondern NUR Wildtyp), überspringen.
+        #wenn für dieses Protein kein Design vorhanden ist (sondern nur Wildtyp), dann überspringen.
         unique_groups = sub["group"].unique()
         if len(unique_groups) == 1 and unique_groups[0] == "Wildtyp":
             skipped_count += 1

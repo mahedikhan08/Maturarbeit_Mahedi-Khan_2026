@@ -2,14 +2,14 @@ import os
 
 # --- CONFIGURATION  ---
 FASTA_FILE = "cath_sequences_selected.fasta"  # Name deiner FASTA-Datei
-WORKDIR = "/scicore/home/schwede/<username>/project/tea-leaves-workdir/cath_seq"
+WORKDIR = "path to workdir"
 STABILITY_WEIGHT = 0
 LEN_MULTIPLIER = 200
 DECAY_SCHEDULE = 2
 # ------------------------------------------------
 
 def parse_fasta(fasta_path):
-    """Liest die FASTA-Datei aus und gibt eine Liste von (ID, Sequenz) zurück."""
+    #Liest die FASTA-Datei aus und gibt eine Liste von (ID, Sequenz) zurück.
     sequences = []
     current_id = None
     current_seq = []

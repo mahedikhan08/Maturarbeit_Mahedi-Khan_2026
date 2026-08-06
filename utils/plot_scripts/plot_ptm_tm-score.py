@@ -9,9 +9,9 @@ import pandas as pd
 import seaborn as sns
 
 # --- CONFIGURATION ---
-BASE_DIR = "/scicore/home/schwede/<username>/project/tea-leaves-workdir/cath_seq/sieve_output/scale"
-DG_CSV_PATH = "/scicore/home/schwede/<username>/project/tea-leaves-workdir/cath_seq/stability_comparison/scale/all_dG_results.csv"
-OUTPUT_DIR = "/scicore/home/schwede/<username>/project/tea-leaves-workdir/cath_seq/stability_comparison/scale"
+BASE_DIR = "path to workdir"
+DG_CSV_PATH = "path to all_dG.csv"
+OUTPUT_DIR = "output path"
 GROUPS = ["dG_0"]
 # ------------------------------------------------
 
@@ -24,11 +24,7 @@ def shorten_id(full_id):
 
 
 def load_dg_lookup(csv_path):
-    """
-    Laedt all_dG_results.csv und baut ein Lookup (group, design_id) -> dG.
-    Nur Design-Zeilen (group != 'Wildtyp') werden beruecksichtigt, da nur
-    diese eine design_id passend zu den structure_scores.json Schluesseln haben.
-    """
+    #Laedt all_dG_results.csv und baut ein Lookup (group, design_id) -> dG
     if not os.path.isfile(csv_path):
         print(f"Fehler: '{csv_path}' nicht gefunden. Fuehre zuerst compare_stability.py aus.")
         return {}

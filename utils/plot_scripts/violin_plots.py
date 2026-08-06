@@ -7,9 +7,9 @@ import pandas as pd
 import numpy as np
 
 # --- CONFIGURATION ---
-# CSV, die von compare_stability.py erzeugt wurde
-CSV_PATH = "/scicore/home/schwede/<username>/project/tea-leaves-workdir/cath_seq/stability_comparison/lab/all_dG_results_filtered.csv"
-OUTPUT_DIR = "/scicore/home/schwede/<username>/project/tea-leaves-workdir/cath_seq/stability_comparison/lab/violin_plots"
+# CSV, die von wildtype_vs_designs_dG.py erzeugt wurde
+CSV_PATH = "path to all_dG_results.csv"
+OUTPUT_DIR = "path for output"
 # ------------------------------------------------
 
 
@@ -36,7 +36,6 @@ def main():
     groups = sorted(df["group"].unique(), key=sort_key)
     design_groups = [g for g in groups if g != "Wildtyp"]
 
-    # Farbpalette definieren
     palette = ["#378ADD", "#639922", "#BA7517", "#D4537E", "#7F77DD"]
     color_map = {"Wildtyp": "#888780"}
     for i, g in enumerate(design_groups):
@@ -48,7 +47,7 @@ def main():
     created_count = 0
     skipped_count = 0
 
-    # Seed für reproduzierbares "Jitter" (Streuung) der Punkte
+    # jitter
     rng = np.random.default_rng(42)
 
     for cath_id in cath_ids:
@@ -57,12 +56,11 @@ def main():
         wt_rows = sub[sub["group"] == "Wildtyp"]
         design_rows = sub[sub["group"] != "Wildtyp"]
 
-        # SKIP-LOGIK: Wenn für dieses Protein KEIN Design vorhanden ist, überspringen.
+        # skip-logik
         if design_rows.empty:
             skipped_count += 1
             continue
 
-        # Designs für die Violinplots gruppieren (sortiert nach dG_X Gewicht)
         unique_design_groups = sorted(design_rows["group"].unique(), key=sort_key)
         
         data_to_plot = []
@@ -101,7 +99,6 @@ def main():
 
         # PUNKTE HINZUFÜGEN (Jitter)
         for i, g_data in enumerate(data_to_plot):
-            # i+1 ist die x-Koordinate der jeweiligen Violine (1, 2, 3...)
             x_center = i + 1
             # Ein bisschen Streuung (Jitter) auf der X-Achse generieren
             x_jitter = rng.uniform(-0.08, 0.08, size=len(g_data))
@@ -109,11 +106,11 @@ def main():
             ax.scatter(
                 x_center + x_jitter, 
                 g_data, 
-                color="white",         # Weiße Füllung
-                edgecolor="black",     # Schwarzer Rand
-                s=20,                  # Größe der Punkte
-                zorder=3,              # Z-Order 3 bringt die Punkte in den Vordergrund
-                alpha=0.9              # Leichte Transparenz
+                color="white",       
+                edgecolor="black",    
+                s=20,                 
+                zorder=3,              
+                alpha=0.9              
             )
 
         # X-Achse beschriften

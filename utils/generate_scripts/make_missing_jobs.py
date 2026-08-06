@@ -85,7 +85,7 @@ source $(conda info --base)/etc/profile.d/conda.sh
 conda activate stability
 
 # Offline-Modus fuer Hugging Face (Gewichte liegen schon lokal vor)
-export HF_HOME=/scicore/home/schwede/<username>/hf_cache
+export HF_HOME=<path to hf_cache>
 export HF_HUB_OFFLINE=1
 export TRANSFORMERS_OFFLINE=1
 

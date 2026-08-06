@@ -8,10 +8,9 @@ import numpy as np
 import pandas as pd
 
 # --- CONFIGURATION ---
-CATH_OUTPUTS_DIR = "/scicore/home/schwede/<username>/project/tea-leaves-workdir/cath_seq/cath_outputs_abs_scale"
-OUTPUT_DIR = "/scicore/home/schwede/<username>/project/tea-leaves-workdir/cath_seq/stability_comparison/scale"
-BIN_EDGES = list(range(0, 101, 10))  # 0-10, 10-20, ..., 90-100
-# Nur diese dG_X-Ordner beruecksichtigen (andere werden ignoriert)
+CATH_OUTPUTS_DIR = "path to fasta files"
+OUTPUT_DIR = "output path"
+BIN_EDGES = list(range(0, 101, 10))
 ALLOWED_GROUPS = {"dG_0","dG_0.001", "dG_0.01", "dG_0.1"}
 # ------------------------------------------------
 
@@ -19,10 +18,7 @@ T_PERCENT_RE = re.compile(r"T%=([\-0-9.]+)")
 
 
 def load_t_percentages(base_dir):
-    """
-    Durchsucht base_dir/dG_X/<protein_dir>/designs.fasta nach den
-    T%-Werten in jeder FASTA-Kopfzeile. Gibt Liste von Dicts zurück.
-    """
+    #Durchsucht base_dir/dG_X/<protein_dir>/designs.fasta nach den T%-Werten in jeder FASTA-Kopfzeile. Gibt Liste
     rows = []
     for dg_folder in sorted(os.listdir(base_dir)):
         dg_path = os.path.join(base_dir, dg_folder)
@@ -51,7 +47,6 @@ def load_t_percentages(base_dir):
 
 
 def sort_key(group_name):
-    """dG_X aufsteigend nach Zahl sortieren."""
     try:
         return float(group_name.replace("dG_", ""))
     except ValueError:

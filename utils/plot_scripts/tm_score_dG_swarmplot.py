@@ -9,12 +9,11 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # --- CONFIGURATION ---
-BASE_DIR = "/scicore/home/schwede/<username>/project/tea-leaves-workdir/cath_seq/sieve_output/scale"
-FASTA_BASE_DIR = "/scicore/home/schwede/<username>/project/tea-leaves-workdir/cath_seq/cath_outputs_abs_scale"
-OUTPUT_DIR = "/scicore/home/schwede/<username>/project/tea-leaves-workdir/cath_seq/stability_comparison/scale/filtered"
-FASTA_OUTPUT_DIR = "/scicore/home/schwede/<username>/project/tea-leaves-workdir/cath_seq/stability_comparison/lists"
-
-DG_CSV_PATH = "/scicore/home/schwede/<username>/project/tea-leaves-workdir/cath_seq/stability_comparison/scale/all_dG_results.csv"
+BASE_DIR = "path to structures"
+FASTA_BASE_DIR = "path to fasta files"
+OUTPUT_DIR = "path for plot"
+FASTA_OUTPUT_DIR = "path for fasta"
+DG_CSV_PATH = "path to all_dG_.sv"
 GROUPS = ["dG_0","dG_0.001","dG_0.01","dG_0.1"]
 TM_THRESHOLD = 0.7 
 JITTER_WIDTH = 0.15
@@ -25,7 +24,7 @@ L_RE = re.compile(r"\|L=(\d+)\|")
 
 
 def get_protein_length(fasta_base_dir, group, cath_id):
-    """Liest L= aus der ersten Kopfzeile von designs.fasta fuer dieses Protein aus FASTA_BASE_DIR."""
+    #Liest L= aus der ersten Kopfzeile von designs.fasta fuer dieses Protein aus FASTA_BASE_DIR
     fasta_path = os.path.join(fasta_base_dir, group, cath_id, "designs.fasta")
     if not os.path.isfile(fasta_path):
         return None
@@ -39,10 +38,9 @@ def get_protein_length(fasta_base_dir, group, cath_id):
 
 
 def load_dg_scores(csv_path):
-    """
-    Liest die dG-Werte aus der CSV-Datei.
-    Ignoriert 'Wildtyp' und gibt ein Dict {(group, design_id): dg_value} zurueck.
-    """
+
+    #Liest die dG-Werte aus der CSV-Datei und ignoriert Wildtyp
+
     dg_dict = {}
     if not os.path.isfile(csv_path):
         print(f"Warnung: dG CSV-Datei '{csv_path}' nicht gefunden.")
@@ -64,10 +62,7 @@ def load_dg_scores(csv_path):
 
 
 def load_group_scores(base_dir, fasta_base_dir, group, dg_dict):
-    """
-    Liest structure_scores.json fuer eine dG_X-Gruppe ein und matcht die dG-Werte.
-    Gibt eine Liste von Dicts zurueck.
-    """
+    #Liest structure_scores.json fuer eine dG_X-Gruppe ein und matcht die dG-Werte.
     scores_path = os.path.join(base_dir, group, "structure_scores.json")
     if not os.path.isfile(scores_path):
         print(f"Warnung: '{scores_path}' nicht gefunden, ueberspringe Gruppe '{group}'.")
@@ -106,10 +101,7 @@ def load_group_scores(base_dir, fasta_base_dir, group, dg_dict):
 
 
 def load_fasta_sequences(fasta_base_dir, group, cath_ids):
-    """
-    Liest die Aminosäure-Sequenzen aus allen relevanten designs.fasta-Dateien einer Gruppe.
-    Gibt ein Dict {(cath_id, design_tag): sequence} zurück.
-    """
+    #Liest die Aminosäure-Sequenzen aus allen relevanten designs.fasta-Dateien einer Gruppe.
     sequences = {}
     for cath_id in cath_ids:
         fasta_path = os.path.join(fasta_base_dir, group, cath_id, "designs.fasta")
@@ -140,11 +132,7 @@ def load_fasta_sequences(fasta_base_dir, group, cath_ids):
 
 
 def write_best_sequences_fasta(rows, group, fasta_base_dir, fasta_output_dir, tm_threshold):
-    """
-    Filtert Designs mit TM-Score >= tm_threshold, sortiert sie zuerst alphabetisch
-    nach Protein-Name (cath_id) und darunter aufsteigend nach dG-Wert.
-    Schreibt sie anschließend in eine FASTA-Datei im Zielordner.
-    """
+    #Filtert Designs mit TM-Score >= tm_threshold, sortiert sie zuerst alphabetisch nach Protein-Name (cath_id) und darunter aufsteigend nach dG-Wert. Schreibt sie anschliessend in eine FASTA-Datei im Zielordner.
     filtered_rows = [
         r for r in rows 
         if r["tm_model"] is not None 

@@ -9,15 +9,15 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 # --- CONFIGURATION ---
-WILDTYPE_DIR = "/scicore/home/schwede/<username>/project/tea-leaves-workdir/cath_seq/wildtype_esm3dg_predictions"
-DESIGN_DIR = "/scicore/home/schwede/<username>/project/tea-leaves-workdir/cath_seq/sieve_output/esm3dg_predictions_scale"
-SIEVE_BASE_DIR = "/scicore/home/schwede/<username>/project/tea-leaves-workdir/cath_seq/sieve_output/scale"
-OUTPUT_DIR = "/scicore/home/schwede/<username>/project/tea-leaves-workdir/cath_seq/stability_comparison/scale/filtered"
+WILDTYPE_DIR = "path to stab predictor wildtype output"
+DESIGN_DIR = "path to stab predictor design output"
+OUTPUT_DIR = "path for output"
+SIEVE_BASE_DIR = "path to structures"
 # ------------------------------------------------
 
 
 def load_wildtype_results(wildtype_dir):
-    """Liest alle Wildtyp dG_result.json Dateien ein. Gibt Liste von Dicts zurück."""
+    #Liest alle Wildtyp dG_result.json Dateien ein.
     rows = []
     pattern = os.path.join(wildtype_dir, "*", "dG_result.json")
     for path in sorted(glob.glob(pattern)):
@@ -37,10 +37,7 @@ def load_wildtype_results(wildtype_dir):
 
 
 def load_tm_scores(sieve_base_dir):
-    """
-    Liest alle structure_scores.json Dateien aus sieve_base_dir/dG_X/structure_scores.json.
-    Nutzt ein Tuple (group, design_id) als Key, um Überschreibungen zu verhindern!
-    """
+    #Liest alle structure_scores.json Dateien aus sieve_base_dir/dG_X/structure_scores.json.
     tm_scores = {}
     pattern = os.path.join(sieve_base_dir, "dG_*", "structure_scores.json")
     
@@ -66,10 +63,7 @@ def load_tm_scores(sieve_base_dir):
 
 
 def load_design_results(design_dir, tm_scores):
-    """
-    Liest alle Design dG_result.json Dateien ein, filtert nach tm_model > 0.7
-    und berechnet die Filter-Statistiken separat pro Gruppe via robuster Pfad-Analyse.
-    """
+    #Liest alle Design dG_result.json Dateien ein, filtert nach tm_model > 0.7
     rows = []
     pattern = os.path.join(design_dir, "dG_*", "*", "*", "dG_result.json")
     

@@ -9,10 +9,10 @@ import pandas as pd
 import seaborn as sns
 
 # --- CONFIGURATION ---
-BASE_DIR = "/scicore/home/schwede/<username>/project/tea-leaves-workdir/cath_seq/sieve_output/scale"
-FASTA_BASE_DIR = "/scicore/home/schwede/<username>/project/tea-leaves-workdir/cath_seq/cath_outputs_abs_scale"
-DG_CSV_PATH = "/scicore/home/schwede/<username>/project/tea-leaves-workdir/cath_seq/stability_comparison/scale/all_dG_results.csv"
-OUTPUT_DIR = "/scicore/home/schwede/<username>/project/tea-leaves-workdir/cath_seq/stability_comparison/scale/filtered"
+BASE_DIR = "path to workdir"
+FASTA_BASE_DIR = "path to directory with fasta files"
+DG_CSV_PATH = "path to all_dG.csv"
+OUTPUT_DIR = "output path"
 GROUPS = ["dG_0"]
 T_PERCENT_THRESHOLD = 70.0
 # ------------------------------------------------
@@ -30,12 +30,7 @@ def shorten_id(full_id):
 
 
 def get_t_percent(group, protein_id):
-    """
-    Liest T% fuer ein Design aus der passenden designs.fasta.
-    protein_id z.B. '1a1vA01_190-324_cath_4_4_0_designed_3'.
-    Ergebnisse pro (group, cath_id) werden gecacht, um die Datei nicht
-    fuer jedes einzelne Design erneut einzulesen.
-    """
+    #Liest T% fuer ein Design aus der passenden designs.fasta
     idx = protein_id.rfind("_designed_")
     if idx == -1:
         return None
@@ -62,11 +57,6 @@ def get_t_percent(group, protein_id):
 
 
 def load_dg_lookup(csv_path):
-    """
-    Laedt all_dG_results.csv und baut ein Lookup (group, design_id) -> dG.
-    Nur Design-Zeilen (group != 'Wildtyp') werden beruecksichtigt, da nur
-    diese eine design_id passend zu den structure_scores.json Schluesseln haben.
-    """
     if not os.path.isfile(csv_path):
         print(f"Fehler: '{csv_path}' nicht gefunden. Fuehre zuerst compare_stability.py aus.")
         return {}

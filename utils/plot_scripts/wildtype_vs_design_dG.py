@@ -8,14 +8,14 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 # --- CONFIGURATION ---
-WILDTYPE_DIR = "/scicore/home/schwede/<username>/project/tea-leaves-workdir/cath_seq/wildtype_esm3dg_predictions"
-DESIGN_DIR = "/scicore/home/schwede/<username>/project/tea-leaves-workdir/cath_seq/sieve_output/esm3dg_predictions_scale"
-OUTPUT_DIR = "/scicore/home/schwede/<username>/project/tea-leaves-workdir/cath_seq/stability_comparison/scale"
+WILDTYPE_DIR = "path to stab predictor wildtype output"
+DESIGN_DIR = "path to stab predictor design output"
+OUTPUT_DIR = "path for output"
 # ------------------------------------------------
 
 
 def load_wildtype_results(wildtype_dir):
-    """Liest alle Wildtyp dG_result.json Dateien ein. Gibt Liste von Dicts zurück."""
+    #Liest alle Wildtyp dG_result.json Dateien ein.
     rows = []
     pattern = os.path.join(wildtype_dir, "*", "dG_result.json")
     for path in sorted(glob.glob(pattern)):
@@ -35,13 +35,7 @@ def load_wildtype_results(wildtype_dir):
 
 
 def load_design_results(design_dir):
-    """
-    Liest alle Design dG_result.json Dateien ein. Erwartete Struktur:
-    design_dir/dG_X/<protein_dir>/<design_id>/dG_result.json
-    Die CATH-ID wird aus dem ersten Unterstrich-Teil von protein_dir extrahiert,
-    z.B. '1a04A02_129-215_cath_4_4_0' -> '1a04A02', damit sie mit den
-    Wildtyp-IDs (Dateiname ohne Endung, z.B. '1a04A02') uebereinstimmt.
-    """
+    # Liest alle trajectory.json und schreibt csv file
     rows = []
     pattern = os.path.join(design_dir, "dG_*", "*", "*", "dG_result.json")
     for path in sorted(glob.glob(pattern)):
