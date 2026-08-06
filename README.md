@@ -24,13 +24,9 @@ The repository is organized into distinct modules for reproducibility and clear 
 
 * cath_database/
   * cath_sequences_selected.fasta (82 target wildtype CATH sequences)
-* Sequences/
-  * all_designs/ (All 32,800 simulated trajectory FASTA files)
-  * successful_designs/ (Designs filtered by global topology: pTM > 0.7)
-  * lab/ (Top candidates filtered for lab validation: pTM > 0.7 & TM > 0.7)
 * results/
   * Plots/ (Categorized analytical plots: scatter, violin, tendency)
-  * dG_averages_summary.txt (Aggregated raw stability scores)
+  * Sequences/ (All 32,800 Designs filtered after usage and evaluation)
   * analysis_results.txt (Wilcoxon signed-rank tests & compromise score evaluation)
 * utils/
   * generate_scripts/ (Python scripts for automated SLURM job generation)
@@ -48,7 +44,7 @@ The repository is organized into distinct modules for reproducibility and clear 
 | **`dG_0.01`** | 8,200 | **350** | **4.27%** | **3.366** | **+0.268** | **Optimal Sweet Spot** |
 | **`dG_0.1`** | 8,200 | 153 | 1.87% | 6.029 | -0.032 | Severe quality drop |
 
-*Statistical significance confirmed via paired Wilcoxon signed-rank tests (p < 0.001$ for w_stab = 0.01 vs dG_0).* 
+*Statistical significance confirmed via paired Wilcoxon signed-rank tests (p < 0.001 for w_stab = 0.01 vs dG_0).* 
 
 ---
 
