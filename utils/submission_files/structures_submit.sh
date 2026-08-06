@@ -8,7 +8,7 @@
 # Umgebung laden
 ml Miniconda3
 source $(conda info --base)/etc/profile.d/conda.sh
-conda activate /scicore/home/schwede/pudziu0000/mambaforge/envs/colabfold
+conda activate <path to colabfold_env>
 
 # Offline-Modus fuer Hugging Face
 export TRANSFORMERS_OFFLINE=1
@@ -17,6 +17,6 @@ export TRANSFORMERS_OFFLINE=1
 mkdir -p logs
 
 # Befehl auswaehlen und ausfuehren
-cd /scicore/home/schwede/<username>/project/tea-leaves/sieve
+cd <path to sieve in tea-leaves>
 
-snakemake --use-conda --profile slurm -s Snakefile structure_scores --cores 64 --configfile /scicore/home/schwede/<username>/project/tea-leaves-workdir/cath_seq/config.yaml
+snakemake --use-conda --profile slurm -s Snakefile structure_scores --cores 64 --configfile <path to config.yaml>
