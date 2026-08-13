@@ -1,7 +1,7 @@
 # Optimierung einer Protein-Design-Pipeline zur Erzeugung thermostabiler Proteine
 
 > **High-Performance Computing & Deep Learning Workflows for Thermostable Protein Design**  
-> *Graduation Project / Maturaarbeit (2026) – Developed in collaboration with the Schwede Group (Biozentrum, University of Basel)*
+> *Maturaarbeit (2026) – Developed in collaboration with the Schwede Group (Biozentrum, University of Basel)*
 
 ---
 
