@@ -16,5 +16,3 @@ dG_0.01        8200.000                 350             4.268        3.366      
 dG_0.1         8200.000                 153             1.866        6.029          1.698          -1.730            -0.032
 
 -> Hoechster Kompromiss-Score: dG_0.01
-
-Rohdaten zusaetzlich gespeichert unter: compromise_score_summary.csv
