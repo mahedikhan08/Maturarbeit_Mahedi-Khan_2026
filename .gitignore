@@ -1,4 +1,3 @@
-*.json
 *.pdb
 *.pt
 __pycache__/
