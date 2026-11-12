@@ -23,7 +23,7 @@ Research carried out with the Schwede Group · Biozentrum, University of Basel
 
 ## The challenge
 
-Increasing a protein-design model's stability pressure can also push its output away from the target structure. This study asks **how much stability weighting is useful before structural similarity deteriorates**.
+Increasing a protein-design model's stability pressure can also push its output away from the target structure. This study tests **which setting improves predicted protein stability while keeping the shape close to the original**.
 
 TEA-Leaves was evaluated at `w_stab ∈ {0, 0.001, 0.01, 0.1}`, with 100 trajectories per starting domain and condition.
 
@@ -98,7 +98,7 @@ A higher predicted stability score does not by itself establish a higher melting
 <details>
 <summary><strong>Secondary structure: what changes at high stability pressure?</strong></summary>
 
-The thesis reports a mean helix fraction of **28.71%** in the control, **29.36%** at `0.01` and **50.44%** at `0.1` across all designs. The highest weight therefore coincided with a substantial shift in predicted structural composition.
+The thesis reports a mean helix fraction of **28.71%** in the control, **29.36%** at `0.01` and **50.44%** at `0.1` across all designs. At the highest weight, the predicted proteins contained much more helical structure.
 
 [Explore the secondary-structure results](https://github.com/mahedikhan08/Maturarbeit_Mahedi-Khan_2026/tree/main/results/Secondary_Structure).
 
