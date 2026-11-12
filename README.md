@@ -119,6 +119,3 @@ TEA-Leaves and its stability-term extension were provided by the research group.
 
 [MIT license](https://github.com/mahedikhan08/Maturarbeit_Mahedi-Khan_2026/blob/main/LICENSE) · Third-party software and models retain their own licenses.
 
----
-
-<sub>Results follow *Computational Protein Design — Optimierung einer Protein-Design-Pipeline zur Erzeugung thermostabiler Proteine*, thesis version dated 31 October 2026 (`NW27-154103_Arbeit.pdf`), especially Sections 3.3–3.4 and 4.3–4.6. Experimental results were not available in that version.</sub>
