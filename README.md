@@ -1,7 +1,7 @@
 <div align="center">
 
 # Computational Protein Design
-### Finding the balance between predicted stability and structural similarity
+### Optimization of a Protein-Design-Pipeline for generating thermostable proteins
 
 **Mahedi Khan · Matura thesis 2026**  
 Research carried out with the Schwede Group · Biozentrum, University of Basel
